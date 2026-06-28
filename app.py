@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
 @app.route('/')
 def home():
@@ -11,5 +11,11 @@ def about():
     username = "aideibama"
     booklist = ["atomic habit","deep work", "the alchemist"]
     return render_template('about.html', username=username, book = booklist)
+@app.route('/submit', methods = ['GET','POST'])
+def submit():
+    if request.method == 'POST':
+        response = request.form.get('username')
+        return render_template('result.html', result = response)
+    return render_template('form.html')
 if __name__ == '__main__':
     app.run(debug=True)
