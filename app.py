@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 @app.route('/')
 def home():
@@ -17,5 +17,11 @@ def submit():
         response = request.form.get('username')
         return render_template('result.html', result = response)
     return render_template('form.html')
+@app.route('/api/user')
+def users():
+    user ={'name':'aideibama',
+           'role':'developer',
+           'improvements':'yes'}
+    return jsonify(user)
 if __name__ == '__main__':
     app.run(debug=True)
