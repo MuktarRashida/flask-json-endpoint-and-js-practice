@@ -19,9 +19,16 @@ def submit():
     return render_template('form.html')
 @app.route('/api/user')
 def users():
-    user ={'name':'aideibama',
-           'role':'developer',
-           'improvements':'yes'}
+    user = {'name':'rashidat',
+            'role':'developer',
+            'improvement':'yes'}
     return jsonify(user)
+
+@app.route('/api/role')
+def text():
+    name = request.args.get('names')
+    return jsonify({'result': 'searched for' + name})
+
+
 if __name__ == '__main__':
     app.run(debug=True)
