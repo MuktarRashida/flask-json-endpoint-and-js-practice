@@ -1,7 +1,5 @@
 {%extends "base.html"%}
-<!DOCTYPE html>
-{% block title%} home {%endblock%}{%block content %}
-<html><head><title>practice</title></head><body>
+{%block content%}
     <h1>welcome to my first flask</h1>
     <h2>this is the home route</h2><a link href = "/about">about page</a>
     <p>Favorite food: {{ foods }}</p>
@@ -9,6 +7,9 @@
     <form action = '/submit' method="post">
         <input type = 'text' name = 'username' placeholder = 'type in here'>
         <br><button type = 'submit'> click here</button></form>
+        <input type = 'text' id = "txt">
+        <button type = 'button' id = 'btn'> click me</button>
+        <div id = 'box'></div>
     {%if loggedin %}<p>welcome back</p>
     {%else%}<P><h3>please log in</h3></P>{%endif%}{%endblock%}
-</body></html>
+    
