@@ -15,7 +15,8 @@ def about():
 def submit():
     if request.method == 'POST':
         response = request.form.get('username')
-        return render_template('result.html', result = response)
+        display = request.form.get('box')
+        return render_template('home.html',display = response)
     return render_template('form.html')
 @app.route('/api/user')
 def users():
@@ -27,7 +28,7 @@ def users():
 @app.route('/api/role')
 def text():
     name = request.args.get('names')
-    return jsonify({'result': 'searched for' + name})
+    return jsonify({'result': 'searched for ' + name})
 
 
 if __name__ == '__main__':
