@@ -1,6 +1,5 @@
 {%extends "base.html"%}
-<!DOCTYPE html>
-<html><head><title>practice</title></head><body>{%block content%}<h1>welcome to my first flask</h1>
+{%block content%}<h1>welcome to my first flask</h1>
     <h2>this is the about route</h2><a link href = "/home">home page</a>
     <p>Welcome, {{ username }}!</p>
     <p>my book list<ol>{%for books in book %}<li>{{books}}</li>{%endfor %}</ol></p>
