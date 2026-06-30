@@ -15,8 +15,7 @@ def about():
 def submit():
     if request.method == 'POST':
         response = request.form.get('username')
-        display = request.form.get('box')
-        return render_template('home.html',display = response)
+        return render_template('home.html', home = response)
     return render_template('form.html')
 @app.route('/api/user')
 def users():
